@@ -20,6 +20,12 @@ import java.io.File;
  * @date 2018/9/3
  */
 public class MyApplication extends Application {
+
+    MyApplication myApplication ;
+
+    public MyApplication getApplication(){
+        return myApplication;
+    }
     /**
      * 数据库GreenDao
      */
@@ -31,6 +37,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        myApplication = this;
         // 日志初始化
         MyLogger.init(true, AppConfigs.PACKAGE_NAME);
         MultiDex.install(this);

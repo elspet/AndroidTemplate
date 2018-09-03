@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/lisa/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.2/323964c36556eb0e6209f65c1cef72b53b461ab8/reactive-streams-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="323964c36556eb0e6209f65c1cef72b53b461ab8">
+        <dex dex="/Users/lisa/Dev/AndroidTemplate/app/build/intermediates/transforms/dex/debug/folders/1000/10/reactive-streams-1.0.2_241b526984cd5a4e8182df8c1a82cfa5511e7a0c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lisa/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.1/bf6d5185963ea3ed40d44f56a2130c7a5e918f3c/rxjava-2.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="bf6d5185963ea3ed40d44f56a2130c7a5e918f3c">
+        <dex dex="/Users/lisa/Dev/AndroidTemplate/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-2.2.1_3d3b4078923928a54ef2c2a465ab39d3e52dd934/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/lisa/.android/build-cache/335db2985fdb7b56eaae771da304b6190ed69dd0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="37d3f9a065d98926697160993997927884e630f2">
+        <dex dex="/Users/lisa/Dev/AndroidTemplate/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_8c0c0612532fa735de6a8e7197a29071f817ce14/classes.dex" />
+    </item>
+
+</items>

@@ -22,9 +22,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.bumptech.glide.RequestManager;
-import com.listcloud.intelligentdoor.global.ActivityManager;
-import com.listcloud.intelligentdoor.global.Constants;
-import com.listcloud.intelligentdoor.utils.ToastUtils;
+import com.c4po.template.global.ActivityManager;
+import com.c4po.template.global.Constants;
+import com.c4po.template.utils.ToastUtils;
 
 import butterknife.ButterKnife;
 

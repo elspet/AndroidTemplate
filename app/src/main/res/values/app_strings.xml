@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TemplateProject</string>
+
+    <!--权限请求-->
+    <string name="app_request_permissions_dialog_title">请求权限</string>
+    <string name="app_request_permissions_dialog_content">应用不能正常运行除非开启所有权限，打开应用设置修改应用的权限</string>
+
+    <!--网络请求-->
+    <string name="app_net_loading_failed">数据加载失败</string>
+
+</resources>
