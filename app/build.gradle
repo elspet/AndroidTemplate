@@ -1,0 +1,96 @@
+apply plugin: 'com.android.application'
+// 应用GreenDao插件
+apply plugin: 'org.greenrobot.greendao'
+// Dagger需要
+apply plugin: 'android-apt'
+
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi', 'armeabi-v7a' //, 'x86', 'x86_64', 'arm64-v8a'
+        }
+        // multidex配置
+        multiDexEnabled true
+
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    buildToolsVersion '27.0.3'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    // 基本 依赖配置开始
+    compile rootProject.ext.dependencies["constraint-layout"]
+    compile rootProject.ext.dependencies["support-v4"]
+    compile rootProject.ext.dependencies["appcompat-v7"]
+
+    // 系统权限 依赖配置开始
+    compile rootProject.ext.dependencies["easy_permission"]
+
+    // 数据库
+    compile rootProject.ext.dependencies["greendao"]
+    compile rootProject.ext.dependencies["greendao_generator"]
+
+    // view注入 依赖配置开始
+    compile rootProject.ext.dependencies["butterknife"]
+    compile rootProject.ext.dependencies["butterknife-compiler"]
+
+    // 网络请求 依赖配置开始
+    compile rootProject.ext.dependencies["okhttp3"]
+    compile rootProject.ext.dependencies["retrofit"]
+    compile rootProject.ext.dependencies["retrofit-converters"]
+    compile rootProject.ext.dependencies["logging-interceptor"]
+    compile rootProject.ext.dependencies["converter-gson"]
+    compile rootProject.ext.dependencies["retrofit-adapters"]
+    compile rootProject.ext.dependencies["adapter-rxjava"]
+    compile rootProject.ext.dependencies["rxandroid"]
+    compile rootProject.ext.dependencies["rxjava"]
+    compile rootProject.ext.dependencies["gson"]
+
+    // 图片加载工具 依赖配置开始
+    compile('com.github.bumptech.glide:glide:4.6.1') {
+        exclude group: "com.android.support"//去掉glide中的support包
+    }
+    annotationProcessor('com.github.bumptech.glide:compiler:4.6.1') {
+        exclude group: "com.android.support"//去掉glide中的support包
+    }
+
+    // 分包 依赖配置开始
+    compile rootProject.ext.dependencies["multidex"]
+
+    // 日志 依赖配置开始
+    compile rootProject.ext.dependencies["logger"]
+
+    // 广告控件 依赖配置开始
+    compile('com.youth.banner:banner:1.4.10') {
+        //去掉glide中的support包
+        exclude group: "com.github.bumptech.glide"
+    }
+
+
+}
+greendao {
+    schemaVersion 1//数据库版本号
+    daoPackage 'com.c4po.template.db.greendao'//设置DaoMaster、DaoSession、Dao包名
+    targetGenDir 'src/main/java'//设置DaoMaster、DaoSession、Dao目录
+    //targetGenDirTest：设置生成单元测试目录
+    //generateTests：设置自动生成单元测试用例
+}
