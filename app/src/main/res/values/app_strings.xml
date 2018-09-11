@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TemplateProject</string>
+    <string name="app_name">小小懒</string>
 
     <!--权限请求-->
     <string name="app_request_permissions_dialog_title">请求权限</string>
