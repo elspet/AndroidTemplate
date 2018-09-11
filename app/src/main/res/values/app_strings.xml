@@ -8,4 +8,6 @@
     <!--网络请求-->
     <string name="app_net_loading_failed">数据加载失败</string>
 
+    <string name="app_ad_btn_show_readme">README.md</string>
+
 </resources>

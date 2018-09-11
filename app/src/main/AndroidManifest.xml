@@ -29,6 +29,7 @@
         </activity>
 
         <activity android:name=".mvp.ui.AdvertisementActivity"></activity>
+        <activity android:name=".mvp.ui.ShowReadmeActivity"></activity>
     </application>
 
 </manifest>

@@ -66,6 +66,13 @@ ext {
             "greendao"                : 'org.greenrobot:greendao:3.2.2',
             "greendao_generator"      : 'de.greenrobot:greendao-generator:1.3.1',
 
+            "markdown"                : 'com.zzhoujay.markdown:markdown:1.0.5',
+
+            // 调试工具
+            "stetho"                  : 'com.facebook.stetho:stetho:1.5.0',
+            "stetho-okhttp"           : 'com.facebook.stetho:stetho-okhttp:1.5.0',
+            "stetho-urlconnection"    : 'com.facebook.stetho:stetho-urlconnection:1.5.0'
+
 
     ]
 

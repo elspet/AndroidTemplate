@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.facebook.stetho:stetho-okhttp-1.5.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/d3459821476a3ede97634d474e1e3b40884e0bbb/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/d3459821476a3ede97634d474e1e3b40884e0bbb/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

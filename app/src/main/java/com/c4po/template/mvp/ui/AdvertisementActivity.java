@@ -1,9 +1,11 @@
 package com.c4po.template.mvp.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 
 import com.c4po.template.R;
 import com.c4po.template.base.BaseActivity;
@@ -17,6 +19,7 @@ import com.youth.banner.transformer.AccordionTransformer;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * 广告页布局
@@ -38,6 +41,12 @@ public class AdvertisementActivity extends BaseActivity implements AdapterView.O
         advertisementPresenter = new AdvertisementPresenter(getActivity(),
                 this);
         initView();
+    }
+
+    @OnClick(R.id.btn_show_readme)
+    public void onClickShowReadme() {
+        Intent toShowReadme = new Intent(this,ShowReadmeActivity.class);
+        startActivity(toShowReadme);
     }
 
     public AdvertisementPresenter getPresenter(){

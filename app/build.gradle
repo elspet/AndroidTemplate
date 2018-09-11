@@ -85,6 +85,13 @@ dependencies {
         exclude group: "com.github.bumptech.glide"
     }
 
+    // markdown文件展示工具
+    compile rootProject.ext.dependencies["markdown"]
+
+    // 调试工具
+    compile rootProject.ext.dependencies["stetho"]
+    compile rootProject.ext.dependencies["stetho-urlconnection"]
+    compile rootProject.ext.dependencies["stetho-okhttp"]
 
 }
 greendao {
