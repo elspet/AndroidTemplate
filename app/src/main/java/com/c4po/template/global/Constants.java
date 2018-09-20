@@ -29,4 +29,7 @@ public class Constants {
     public static final String groupId = "sk";
     public static final String groupName = "失控科技";
 
+    public static final String SHAREPREFENCE_NAME = "AndroidTemplate";
+    public static final String SHAREPREFENCE_ACCOUNT_NAME = "AndroidTemplate_Account";
+
 }
