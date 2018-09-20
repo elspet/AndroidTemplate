@@ -39,6 +39,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="/Users/lisa/.gradle/caches/modules-2/files-2.1/org.greenrobot/eventbus/3.1.1/5cd91fd014f5b72292f959748c20a2cefefae77d/eventbus-3.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="5cd91fd014f5b72292f959748c20a2cefefae77d">
+        <dex dex="/Users/lisa/Dev/AndroidTemplate/app/build/intermediates/transforms/dex/debug/folders/1000/10/eventbus-3.1.1_cb924ff60bd2405466673e6b2b948aa5728e1af0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/lisa/.android/build-cache/a90effb95fdf908f464b8e798f7fe50227cb3fed/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"

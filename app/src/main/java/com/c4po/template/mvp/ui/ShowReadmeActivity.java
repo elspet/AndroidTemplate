@@ -14,11 +14,13 @@ import android.text.Spanned;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.c4po.template.R;
 import com.c4po.template.base.BaseActivity;
+import com.c4po.template.mvp.ui.message.ReadmeMsgEvent;
 import com.zzhoujay.markdown.MarkDown;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -36,9 +38,9 @@ public class ShowReadmeActivity extends BaseActivity {
 
         mTextView = findViewById(R.id.textView);
         assert mTextView != null;
-//      mTextView.setMovementMethod(LongPressLinkMovementMethod.getInstance());
 
         setText(R.raw.readme);
+
     }
 
     private void setText(int resId) {
@@ -47,7 +49,6 @@ public class ShowReadmeActivity extends BaseActivity {
         mTextView.post(new Runnable() {
             @Override
             public void run() {
-                long time = System.nanoTime();
                 Spanned spanned = MarkDown.fromMarkdown(stream, new Html.ImageGetter() {
                     public static final String TAG = "Markdown";
 
@@ -67,8 +68,6 @@ public class ShowReadmeActivity extends BaseActivity {
                         return drawable;
                     }
                 }, mTextView);
-                long useTime = System.nanoTime() - time;
-                Toast.makeText(getApplicationContext(), "use time: " + useTime + "ns", Toast.LENGTH_LONG).show();
                 mTextView.setText(spanned);
             }
         });
@@ -88,6 +87,13 @@ public class ShowReadmeActivity extends BaseActivity {
         return new BitmapDrawable(x);
     }
 
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ReadmeMsgEvent msgEvent = new ReadmeMsgEvent("AlreadyRead Readme.md ");
+        EventBus.getDefault().post(msgEvent);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

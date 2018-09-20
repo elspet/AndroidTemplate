@@ -6,15 +6,21 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.c4po.template.R;
 import com.c4po.template.base.BaseActivity;
 import com.c4po.template.mvp.presenter.AdvertisementPresenter;
 import com.c4po.template.mvp.ui.contract.IAdvertisementView;
+import com.c4po.template.mvp.ui.message.ReadmeMsgEvent;
 import com.c4po.template.utils.GlideImageLoader;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.transformer.AccordionTransformer;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
@@ -31,6 +37,9 @@ public class AdvertisementActivity extends BaseActivity implements AdapterView.O
 
     @BindView(R.id.banner)
     Banner mAdBanner;
+
+    @BindView(R.id.tv_readed_readme)
+    TextView tvReaded;
 
     AdvertisementPresenter advertisementPresenter;
 
@@ -82,4 +91,30 @@ public class AdvertisementActivity extends BaseActivity implements AdapterView.O
     public void OnBannerClick(int i) {
 
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // 组件间通信
+        if(!EventBus.getDefault().isRegistered(this)){
+            EventBus.getDefault().register(this);
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // 组件间通信
+        if(isFinishing()&&EventBus.getDefault().isRegistered(this)){
+            EventBus.getDefault().unregister(this);
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void subscribeMsg(ReadmeMsgEvent msgEvent){
+
+        tvReaded.setText(msgEvent.readmeMsg);
+    }
+
 }

@@ -93,6 +93,9 @@ dependencies {
     compile rootProject.ext.dependencies["stetho-urlconnection"]
     compile rootProject.ext.dependencies["stetho-okhttp"]
 
+    // 事务处理
+    compile 'org.greenrobot:eventbus:3.1.1'
+
 }
 greendao {
     schemaVersion 1//数据库版本号

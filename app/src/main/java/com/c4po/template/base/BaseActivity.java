@@ -70,7 +70,7 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                ToastUtils.showShort(getActivity(), message);
+                ToastUtils.getInstanc(getActivity()).showToast( message);
             }
         });
 
@@ -192,7 +192,8 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
         super.onDestroy();
         //移除当前activity对象
         ActivityManager.getInstance().removeActivity(this);
-        // 准备做网络请求销毁
+        // 销毁吐司
+        ToastUtils.getInstanc(getActivity()).destory();
 
     }
 

@@ -4,57 +4,68 @@ import android.content.Context;
 import android.widget.Toast;
 
 /**
- * Toast统一管理类
+ * Toast要全局定义统一的一个对象，避免出现Toast无法销毁的情况
  * @author Lisa
- * @date 2018/08/16
+ * @date 2018/9/18
  */
+
 public class ToastUtils {
 
-    private ToastUtils() {
-            /* cannot be instantiated */
-        throw new UnsupportedOperationException("cannot be instantiated");
+    private Toast mToast;
+    private static ToastUtils mToastUtils;
+
+    private ToastUtils(Context context) {
+        mToast = Toast.makeText(context.getApplicationContext(), null, Toast.LENGTH_SHORT);
     }
 
-    public static boolean isShow = true;
-
-    public static void showShort(Context context, CharSequence message) {
-        if (isShow){
-
+    public static synchronized ToastUtils getInstanc(Context context) {
+        if (null == mToastUtils) {
+            mToastUtils = new ToastUtils(context);
         }
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+        return mToastUtils;
+    }
+    /**
+     * 显示toast
+     *
+     * @param toastMsg
+     */
+    public void showToast(String toastMsg) {
+        mToast.setDuration(Toast.LENGTH_LONG);
+        mToast.setText(toastMsg);
+        mToast.show();
     }
 
-    public static void showShort(Context context, int message) {
-        if (isShow){
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    /**
+     * 显示toast
+     *
+     * @param toastMsg
+     */
+    public void showShortToast(String toastMsg) {
+        mToast.setDuration(Toast.LENGTH_SHORT);
+        mToast.setText(toastMsg);
+        mToast.show();
+    }
+
+    /**
+     * 显示toast
+     *
+     * @param toastMsg
+     */
+    public void showLongToast(String toastMsg) {
+        mToast.setDuration(Toast.LENGTH_LONG);
+        mToast.setText(toastMsg);
+        mToast.show();
+    }
+
+    /**
+     * 取消toast，在activity的destory方法中调用
+     */
+    public void destory() {
+        if (null != mToast) {
+            mToast.cancel();
+            mToast = null;
         }
+        mToastUtils = null;
     }
 
-
-    public static void showLong(Context context, CharSequence message) {
-        if (isShow){
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-        }
-    }
-
-
-    public static void showLong(Context context, int message) {
-        if (isShow){
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-        }
-    }
-
-
-    public static void show(Context context, CharSequence message, int duration) {
-        if (isShow){
-            Toast.makeText(context, message, duration).show();
-        }
-
-    }
-
-    public static void show(Context context, int message, int duration) {
-        if (isShow){
-            Toast.makeText(context, message, duration).show();
-        }
-    }
 }

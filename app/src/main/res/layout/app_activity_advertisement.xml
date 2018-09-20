@@ -19,7 +19,22 @@
         android:textStyle="bold"
         android:textAllCaps="false"
         android:textSize="@dimen/app_activity_common_textsize"
-        android:layout_margin="@dimen/app_activity_vertical_margin"
+        android:layout_marginLeft="@dimen/app_activity_vertical_margin"
+        android:layout_marginBottom="50dp"
         android:textColor="@color/app_ad_text_color"
         android:text="@string/app_ad_btn_show_readme"/>
+
+    <TextView
+        android:id="@+id/tv_readed_readme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_marginLeft="@dimen/app_activity_common_textsize"
+        android:layout_alignBaseline="@+id/btn_show_readme"
+        android:layout_toRightOf="@+id/btn_show_readme"
+        android:textSize="@dimen/app_activity_common_textsize"
+        android:layout_marginTop="@dimen/app_activity_vertical_margin"
+        android:textColor="@color/app_ad_text_color"/>
+
+
 </RelativeLayout>
