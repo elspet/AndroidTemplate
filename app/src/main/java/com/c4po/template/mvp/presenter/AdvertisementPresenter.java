@@ -58,7 +58,7 @@ public class AdvertisementPresenter extends BasePresenter<IAdvertisementView> im
 //                        getActivity().showToast(getActivity().getString(R.string.net_loading_failed));
 //                    }
 //                });
-//
+
 
         getView().setListData(adImageUrls);
 

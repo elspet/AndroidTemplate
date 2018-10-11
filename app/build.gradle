@@ -94,7 +94,10 @@ dependencies {
     compile rootProject.ext.dependencies["stetho-okhttp"]
 
     // 事务处理
-    compile 'org.greenrobot:eventbus:3.1.1'
+    compile rootProject.ext.dependencies["eventbus"]
+
+    // 滑动退出页面
+    compile rootProject.ext.dependencies["bga-swipebacklayout"]
 
 }
 greendao {

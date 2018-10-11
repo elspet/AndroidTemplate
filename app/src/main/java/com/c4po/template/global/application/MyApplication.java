@@ -15,6 +15,8 @@ import com.facebook.stetho.Stetho;
 
 import java.io.File;
 
+import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
+
 /**
  * function
  * @author Lisa
@@ -44,6 +46,8 @@ public class MyApplication extends Application {
         MultiDex.install(this);
         // 调试工具
         Stetho.initializeWithDefaults(this);
+        // 初始化滑动退出
+        BGASwipeBackHelper.init(this, null);
     }
 
 
